@@ -9,10 +9,10 @@ const Home = () => {
         <div className={styles.main}>
             <section>
                 <header>
-                    <img src={logo} />
+                    <img src={logo} alt="OMed Assist" />
                 </header>
                 <div>
-                    <img className={styles.hero} src={hero} alt="hero picture"/>
+                    <img className={styles.hero} src={hero} alt="" />
                 </div>
             </section>
             <section className={styles.takeSurvey}>

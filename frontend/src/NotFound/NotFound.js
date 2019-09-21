@@ -8,7 +8,7 @@ class NotFound extends Component {
     return (
       <>
         <div className={styles.container}>
-          <img className={styles.image} src={image} />
+          <img className={styles.image} src={image} alt="Not Found" />
         </div>
 
         <div className={styles.container}>
