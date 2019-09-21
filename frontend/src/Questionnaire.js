@@ -22,6 +22,7 @@ import * as widgets from "surveyjs-widgets";
 
 import "icheck/skins/square/blue.css";
 import "./Questionnaire.css";
+import { saveResult } from "./saveResult.js"
 
 window["$"] = window["jQuery"] = $;
 require("icheck");
@@ -193,8 +194,9 @@ export class Questionnaire extends Component {
     };
   }
 
-  onComplete(self){
+  onComplete(self) {
     return result => {    
+      saveResult(result.data);
       self.setState({ results: result.data, finished: true})
     };
   }
