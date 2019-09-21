@@ -19,6 +19,7 @@ import "./Questionnaire.css";
 import styles from "./Questionnaire.module.css"
 import logo from "./logo.svg";
 import { ortJson } from "./OrtSurvey";
+import { createQuestionnareResultsFromRaw } from "./questionnaireState";
 
 window["$"] = window["jQuery"] = $;
 
@@ -63,7 +64,7 @@ export class Questionnaire extends Component {
     onComplete(self) {
         return result => {
             self.state.setQuestionnaireState({
-                results: result.data,
+                results: createQuestionnareResultsFromRaw(result.data),
                 completed: true
             });
 
