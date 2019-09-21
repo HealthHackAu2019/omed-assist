@@ -1,5 +1,4 @@
 import Airtable from 'airtable';
-import _ from "lodash";
 
 const base = new Airtable({apiKey: 'keyITZ8wed871jDWO'})
   .base('app4kNGsdOb37cKaP');
@@ -7,10 +6,10 @@ const base = new Airtable({apiKey: 'keyITZ8wed871jDWO'})
 const createPayload = (result) => {
   return {
     "fields": {
-      "age_16_to_45": _.get(result, "age_group", "").replace("age_16_45_", "").toLowerCase(),
-      "family_history_alcohol": _.get(result, ["family_history", "fh_alcohol", ""], "").toLowerCase(),
-      "self_substance_alcohol": _.get(result, ["self_substance", "ss_alcohol", ""], "").toLowerCase(),
-      "conditions_adhd": _.get(result, ["conditions", "adhd", ""], "").toLowerCase(),
+      "age_16_to_45": result.age16To45 || "",
+      "family_history_alcohol": result.familyHistory.alcohol || "",
+      "self_substance_alcohol": result.selfSubstance.alcohol || "",
+      "conditions_adhd": result.conditions.adhd || ""
     }
   };
 }

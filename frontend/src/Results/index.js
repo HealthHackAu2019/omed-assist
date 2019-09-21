@@ -8,7 +8,10 @@ class Results extends Component {
   }
 
   render() {
-    const { message, level } = this.props;
+    const { message, level, results } = this.props;
+
+    console.log(JSON.stringify(results));
+
     return (
       <div className={styles.container}>
         <div className={styles.results}>
