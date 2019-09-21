@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Results from "./Results"
 import Questionnaire from "./Questionnaire";
 import NotFound from "./NotFound/NotFound";
-// import { saveResult } from "./saveResult.js"
 
 class App extends Component {
   render() {
@@ -24,7 +23,5 @@ class App extends Component {
     );
   }
 }
-
-// saveResult();
 
 export default App;
