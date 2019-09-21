@@ -6,22 +6,33 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Results from "./Results/index"
 import Questionnaire from "./Questionnaire";
 import NotFound from "./NotFound/NotFound";
+import { getDefaultState, updateQuestionnaireState } from "./appState";
 
 class App extends Component {
-  render() {
-    return (
-      <div className={styles.container}>
-            <Router>
-              <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/questionnaire" component={Questionnaire} />
-                <Route path="/results" component={Results} />
-                <Route component={NotFound} />
-              </Switch>
-          </Router>
-      </div>
-    );
-  }
+
+    constructor(props) {
+        super(props);
+        this.state = getDefaultState()
+    }
+
+    setQuestionnaireState(questionnaireState) {
+        this.setState(updateQuestionnaireState(questionnaireState));
+    }
+
+    render() {
+        return (
+            <div className={styles.container}>
+                <Router>
+                    <Switch>
+                        <Route path="/" exact component={Home} />
+                        <Route path="/questionnaire" render={props => <Questionnaire {...props} setQuestionnaireState={this.setQuestionnaireState.bind(this)} />} />
+                        <Route path="/results" render={props => <Results {...props} results={this.state.results} />} />
+                        <Route component={NotFound} />
+                    </Switch>
+                </Router>
+            </div>
+        );
+    }
 }
 
 export default App;
