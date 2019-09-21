@@ -22,7 +22,8 @@ import * as widgets from "surveyjs-widgets";
 
 import "icheck/skins/square/blue.css";
 import "./Questionnaire.css";
-import { saveResult } from "./saveResult.js"
+import { ortJson } from "./OrtSurvey";
+import { saveResult } from "./saveResult";
 
 window["$"] = window["jQuery"] = $;
 require("icheck");
@@ -47,139 +48,10 @@ export class Questionnaire extends Component {
   constructor(props)
   {
     super(props)
-    const json = {
-      "pages": [
-          {
-              "name": "page1",
-              "elements": [
-                  {
-                      "type": "radiogroup",
-                      "name": "age_group",
-                      "title": "Are you aged between 16-45?",
-                      "choices": [
-                          {
-                              "value": "age_16_45_yes",
-                              "text": "Yes"
-                          },
-                          {
-                              "value": "age_16_45_no",
-                              "text": "No"
-                          }
-                      ],
-                      "colCount": 2
-                  }
-              ]
-          },
-          {
-              "name": "page2",
-              "elements": [
-                  {
-                      "type": "matrixdropdown",
-                      "name": "family_history",
-                      "title": "Does anyone in your family have substance use problems with:",
-                      "columns": [
-                          {}
-                      ],
-                      "choices": [
-                          "Yes",
-                          "No"
-                      ],
-                      "cellType": "radiogroup",
-                      "rows": [
-                          {
-                              "value": "fh_alcohol",
-                              "text": "Alcohol"
-                          },
-                          {
-                              "value": "fh_illicit_drugs",
-                              "text": "Illicit drugs"
-                          },
-                          {
-                              "value": "fh_prescription_drugs",
-                              "text": "Prescription drugs"
-                          }
-                      ]
-                  }
-              ]
-          },
-          {
-              "name": "page3",
-              "elements": [
-                  {
-                      "type": "matrixdropdown",
-                      "name": "self_substance",
-                      "title": "Do you currently have any substance use problems with:",
-                      "columns": [
-                          {}
-                      ],
-                      "choices": [
-                          "Yes",
-                          "No"
-                      ],
-                      "cellType": "radiogroup",
-                      "rows": [
-                          {
-                              "value": "ss_alcohol",
-                              "text": "Alcohol",
-                          },
-                          {
-                              "value": "ss_illicit_drugs",
-                              "text": "Illicit drugs"
-                          },
-                          {
-                              "value": "ss_prescription_drugs",
-                              "text": "Prescription drugs"
-                          }
-                      ]
-                  }
-              ]
-          },
-          {
-              "name": "page4",
-              "elements": [
-                  {
-                      "type": "matrixdropdown",
-                      "name": "conditions",
-                      "title": "Do you have any of the following:",
-                      "columns": [
-                          {}
-                      ],
-                      "choices": [
-                          "Yes",
-                          "No"
-                      ],
-                      "cellType": "radiogroup",
-                      "rows": [
-                          {
-                              "value": "adhd",
-                              "text": "Attention deficit hyperactivity disorder (ADHD)"
-                          },
-                          {
-                              "value": "ocd",
-                              "text": "Obsessive compulsive disorder (OCD)"
-                          },
-                          {
-                              "value": "bipolar",
-                              "text": "Bipolar"
-                          },
-                          {
-                              "value": "schizophrenia",
-                              "text": "Schizophrenia"
-                          },
-                          {
-                              "value": "depression",
-                              "text": "Depression"
-                          }
-                      ]
-                  }
-              ]
-          }
-      ]
-  };
-  
-    const survey = new Survey.Model(json);
+    
+    const survey = new Survey.Model(ortJson);
     survey.showProgressBar = 'top';
-    survey.progressBarType = 'questions';
+    survey.progressBarType = 'pages';
     survey.showQuestionNumbers = 'off';
     survey.showPageNumbers = 'off';
     
