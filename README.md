@@ -1,4 +1,4 @@
-# React quickstart boilerplate for SurveyJS: Survey Library and Survey Creator
+# OMed Assist
 
 This project was bootstrapped with [](https://github.com/surveyjs/surveyjs_react_quickstart),
 which was in turn bootstrapped from [Create React App](https://github.com/facebookincubator/create-react-app).

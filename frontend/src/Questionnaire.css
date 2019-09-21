@@ -43,8 +43,9 @@
     background-color: transparent !important; 
     border: none !important;
     margin: auto;
-    font-size: 24px;
+    font-size: 20px;
     max-width: 800px;
+    padding-top: 0px !important;
 }
 
 .sv_main.sv_default_css .sv_progress_bar
@@ -55,4 +56,18 @@
 .sv_progress_bar > span
 {
     display: none !important;
+}
+
+.sv_q_radiogroup_label
+{
+    margin-right: 10px !important;
+}
+
+body 
+{
+    background-color: var(--primaryColor);
+}
+
+.sv_q_radiogroup_label:last-child span {
+    padding-left: 2px !important;
 }
