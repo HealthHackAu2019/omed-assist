@@ -71,3 +71,8 @@ body
 .sv_q_radiogroup_label:last-child span {
     padding-left: 2px !important;
 }
+
+.slider {
+    width: 80% !important;
+    margin: auto;
+}
