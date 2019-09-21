@@ -1,0 +1,19 @@
+@import "Vars.css";
+
+.title {
+    background-color: var(--lightContrastColor);
+}
+
+.root {
+    background-color: var(--lightContrastColor);
+    height: 200px;
+}
+
+.header {
+    background-color: var(--primaryColor);
+}
+
+.sv_q
+{
+    background-color: aqua !important;
+}
