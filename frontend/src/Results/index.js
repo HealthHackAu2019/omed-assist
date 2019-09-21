@@ -1,14 +1,11 @@
-import React, { PropTypes, Component } from "react";
+import React, { Component } from "react";
 import styles from "./Results.module.css";
 
 
 class Results extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
-    const { message, level, results } = this.props;
+    const { level, results } = this.props;
 
     console.log(JSON.stringify(results));
 
