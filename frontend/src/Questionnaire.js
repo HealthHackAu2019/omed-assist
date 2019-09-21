@@ -45,8 +45,7 @@ export class Questionnaire extends Component {
   {
     super(props)
     const json = {
-      "title": "Opioid Risk Tool",
-      "description": "This tool can be useful for people prior to beginning opioid therapy or those who might be continuing to use opioids for pain management.",
+      "title": "Omed Assist",
       "pages": [
           {
               "name": "page1",
@@ -55,15 +54,14 @@ export class Questionnaire extends Component {
                       "type": "radiogroup",
                       "name": "age_group",
                       "title": "Are you aged between 16-45?",
-                      "isRequired": true,
                       "choices": [
                           {
                               "value": "age_16_45_yes",
-                              "text": "yes"
+                              "text": "Yes"
                           },
                           {
                               "value": "age_16_45_no",
-                              "text": "no"
+                              "text": "No"
                           }
                       ],
                       "colCount": 2
@@ -75,28 +73,28 @@ export class Questionnaire extends Component {
               "elements": [
                   {
                       "type": "matrixdropdown",
-                      "name": "Does anyone in your family have substance use problems with:",
+                      "name": "family_history",
                       "title": "Does anyone in your family have substance use problems with:",
                       "columns": [
                           {}
                       ],
                       "choices": [
-                          "yes",
-                          "no"
+                          "Yes",
+                          "No"
                       ],
                       "cellType": "radiogroup",
                       "rows": [
                           {
-                              "value": "alcohol",
-                              "text": "alcohol"
+                              "value": "fh_alcohol",
+                              "text": "Alcohol"
                           },
                           {
-                              "value": "illicit_drugs",
-                              "text": "illicit drugs"
+                              "value": "fh_illicit_drugs",
+                              "text": "Illicit drugs"
                           },
                           {
-                              "value": "prescription_drugs",
-                              "text": "prescription drugs"
+                              "value": "fh_prescription_drugs",
+                              "text": "Prescription drugs"
                           }
                       ]
                   }
@@ -113,22 +111,22 @@ export class Questionnaire extends Component {
                           {}
                       ],
                       "choices": [
-                          "yes",
-                          "no"
+                          "Yes",
+                          "No"
                       ],
                       "cellType": "radiogroup",
                       "rows": [
                           {
-                              "value": "alcohol",
-                              "text": "alcohol"
+                              "value": "ss_alcohol",
+                              "text": "Alcohol"
                           },
                           {
-                              "value": "illicit_drugs",
-                              "text": "illicit drugs"
+                              "value": "ss_illicit_drugs",
+                              "text": "Illicit drugs"
                           },
                           {
-                              "value": "prescription_drugs",
-                              "text": "prescription drugs"
+                              "value": "ss_prescription_drugs",
+                              "text": "Prescription drugs"
                           }
                       ]
                   }
@@ -145,30 +143,30 @@ export class Questionnaire extends Component {
                           {}
                       ],
                       "choices": [
-                          "yes",
-                          "no"
+                          "Yes",
+                          "No"
                       ],
                       "cellType": "radiogroup",
                       "rows": [
                           {
                               "value": "adhd",
-                              "text": "attention deficit hyperactivity disorder (ADHD)"
+                              "text": "Attention deficit hyperactivity disorder (ADHD)"
                           },
                           {
                               "value": "ocd",
-                              "text": "obsessive compulsive disorder (OCD)"
+                              "text": "Obsessive compulsive disorder (OCD)"
                           },
                           {
                               "value": "bipolar",
-                              "text": "bipolar"
+                              "text": "Bipolar"
                           },
                           {
                               "value": "schizophrenia",
-                              "text": "schizophrenia"
+                              "text": "Schizophrenia"
                           },
                           {
                               "value": "depression",
-                              "text": "depression"
+                              "text": "Depression"
                           }
                       ]
                   }
@@ -178,24 +176,14 @@ export class Questionnaire extends Component {
   };
   
     const survey = new Survey.Model(json);
+    survey.showProgressBar = 'top';
+    survey.progressBarType = 'questions';
+    survey.showQuestionNumbers = 'off';
+    survey.showPageNumbers = 'off';
+    
     survey
       .onComplete
       .add(this.onComplete(this));
-      
-    // survey
-    //   .onUpdateQuestionCssClasses
-    //   .add(function (survey, options) {
-    //       var classes = options.cssClasses
-    //       classes.header = styles.header;
-    //       classes.root = styles.root;
-    //       classes.title = styles.title;
-    //       classes.qstn = styles.sv_qstn;
-    //       classes.row = styles.row;
-    //       classes.item = styles.example;
-    //       classes.label = styles.example;
-    //       classes.header = styles.header
-    //       console.log(classes)
-    //   });
       
     this.state = {
       survey: survey,
@@ -212,12 +200,11 @@ export class Questionnaire extends Component {
 
   render() {
     return (
-        <div>
+        <div className="questionnaire">
           <div className="surveyjs">
             <Survey.Survey model={this.state.survey}/>
           </div>
           <div>
-          { this.state.finished ? (<p>{JSON.stringify(this.state.results)}</p>) : (<p>No Results</p>) }
           </div>
         </div>
     );
