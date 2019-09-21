@@ -119,7 +119,7 @@ export class Questionnaire extends Component {
                       "rows": [
                           {
                               "value": "ss_alcohol",
-                              "text": "Alcohol"
+                              "text": "Alcohol",
                           },
                           {
                               "value": "ss_illicit_drugs",
