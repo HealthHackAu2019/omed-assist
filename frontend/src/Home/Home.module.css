@@ -1,0 +1,53 @@
+.main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: 
+        linear-gradient(0, #F3F3F3 0 50%, #9013FE 50% 100%),
+        url(background_vertical.svg) no-repeat bottom center;
+}
+
+.content {
+    display: flex;
+    align-content: space-around;
+}
+
+.takeSurvey {
+    transform: translate(60vw);
+    width: 30vw;
+    text-align: right;
+}
+
+.takeSurvey span {
+    color: #FFF;
+    font-size: 18pt;
+    display: block;
+}
+
+.takeSurvey .btn {
+    width: 300px;
+}
+
+@media(min-width: 768px) {
+    .main {
+        flex-direction: row;
+        background: 
+            url(background.svg) no-repeat bottom right,
+            linear-gradient(90deg, #F3F3F3 0 70%, #9013FE 70% 100%);
+        
+    }
+
+    .main header {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+    }
+
+    .hero {
+        height: 50vh;
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+    }
+}
