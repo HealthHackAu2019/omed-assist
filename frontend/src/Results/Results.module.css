@@ -1,0 +1,29 @@
+.container {
+    height: 90vh;
+    width: 100vw;
+    background-color: var(--primaryColor);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.results {
+    background-color: #FFF;
+    width: 60vw;
+    align-content: center;
+    padding: 50px;
+    margin-top: 150px;
+}
+
+.summary {
+    font-size: 16pt;
+    font-weight: 100;
+}
+
+h2 {
+    font-weight: 100 !important;
+}
+
+.feedback {
+  flex-basis: 75%;
+}
