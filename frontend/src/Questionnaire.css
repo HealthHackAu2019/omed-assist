@@ -1,0 +1,40 @@
+@import "Vars.css";
+
+.sv_q_title
+{
+    margin-left: -100px;
+}
+
+.sv_q
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+.sv_prev_btn
+{
+    border-color: var(--accentColor) !important;
+    border-width: 12px !important;
+    font-size: 12px !important;
+    color: var(--accentColor) !important;
+    background-color: var(--primaryColor) !important;
+}
+
+.sv_next_btn
+{
+    border-color: var(--accentColor) !important;
+    color: var(--primaryColor) !important;
+    background-color: var(--accentColor) !important;
+}
+
+.sv_complete_btn
+{
+    border-color: var(--accentColor) !important;
+    color: var(--primaryColor) !important;
+    background-color: var(--accentColor) !important;
+}
+
+.sv_body
+{
+    background-color: var(--primaryColor) !important;
+}
