@@ -2,4 +2,5 @@
 
 body {
   background: var(--backgroundColor);
+  font-family: 'Roboto', sans-serif;
 }
