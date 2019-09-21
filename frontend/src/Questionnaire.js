@@ -3,6 +3,8 @@ import * as Survey from "survey-react";
 import "survey-react/survey.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
+import logo from "./logo.svg";
+import styles from "./Questionnaire.module.css"
 
 import "jquery-ui/themes/base/all.css";
 import "nouislider/distribute/nouislider.css";
@@ -45,7 +47,6 @@ export class Questionnaire extends Component {
   {
     super(props)
     const json = {
-      "title": "Omed Assist",
       "pages": [
           {
               "name": "page1",
@@ -201,6 +202,7 @@ export class Questionnaire extends Component {
   render() {
     return (
         <div className="questionnaire">
+          <img src={logo} className={styles.logo} />
           <div className="surveyjs">
             <Survey.Survey model={this.state.survey}/>
           </div>
