@@ -1,0 +1,24 @@
+@import "../Vars.css";
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.content {
+    background-color: var(--lightContrastColor);
+}
+
+.image {
+    width: 125%;
+}
+
+@media (min-width: 600px) {
+    .image {
+        width: 75%;
+    }
+}

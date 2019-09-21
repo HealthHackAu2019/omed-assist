@@ -1,3 +1,5 @@
+@import "./Vars.css";
+
 body {
-  background: #9116FD;
+  background: var(--backgroundColor);
 }
