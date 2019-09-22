@@ -19,7 +19,6 @@ import "./Questionnaire.css";
 import styles from "./Questionnaire.module.css"
 import logo from "./logo.svg";
 import { quizJson } from "./QuizQuestions";
-// import { createQuestionnareResultsFromRaw } from "./questionnaireState";
 
 window["$"] = window["jQuery"] = $;
 
@@ -63,11 +62,6 @@ export class Quiz extends Component {
 
     onComplete(self) {
         return result => {
-            // self.state.setQuestionnaireState({
-            //     results: createQuestionnareResultsFromRaw(result.data),
-            //     completed: true
-            // });
-
             this.props.history.push('/')
         };
     }
