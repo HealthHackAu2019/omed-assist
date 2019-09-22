@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styles from "./App.module.css";
 import "./App.css";
 import Home from "./Home/index"
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Results from "./Results/index"
 import Questionnaire from "./Questionnaire";
 import NotFound from "./NotFound/NotFound";
