@@ -91,13 +91,48 @@ export default {
                             <li>Monitor for any signs you might be misusing your opioids by using a medication diary</li>
                         </ul>
                     </>
-                )
-
+                ),
+                depression: (
+                    <>
+                        <p>You are currently experiencing mild to moderate levels of depression at the moment.</p>
+                        <p>It’s important to look out for signs of depression so that you can address it early. When you find yourself feeling down or hopeless about things, start to monitor how you’re feeling and try using strategies that have worked for you in the past.</p>
+                        <ul>
+                            <li>Keep a mood diary</li>
+                            <li>Exercise or doing things you enjoy are good tools to improve your mood.</li>
+                        </ul>
+                    </>
+                ),
             },
             significant: {
-                summary: '',
-
-            }
+                summary: <>Based on your results, you may be at risk of experiencing <strong>persistent</strong> pain and <strong>opioid misuse</strong>.</>,
+                pain: (
+                    <>
+                        <p>You have indicated that you are experiencing acute pain.  A number of people who have more severe pain also have levels of depression. Sometimes when you are feeling down and not enjoying aspects of your life you are more likely to experience pain more intensely and more likely to rely on opioid medications than if you were not feeling depressed.</p>
+                        <ul>
+                            <li>Keep a pain diary</li>
+                            <li>Use relaxation strategies such as yoga, physical activity and other medications</li>
+                        </ul>
+                    </>
+                ),
+                opioid: (
+                    <>
+                        <p>You are at low risk of developing an opioid use problem. This means you are less likely than others to develop an opioid use disorder.  But a number of people who have higher levels of depression and higher levels of pain are more likely to misuse opioids. Sometimes when you are feeling down you are more likely to experience pain more intensely and more likely to rely on opioid medications than if you were not feeling depressed or in pain.</p>
+                        <ul>
+                            <li>Monitor for any signs you might be misusing your opioids by using a medication diary</li>
+                        </ul>
+                    </>
+                ),
+                depression: (
+                    <>
+                        <p>You are currently experiencing mild to moderate levels of depression at the moment.</p>
+                        <p>It’s important to look out for signs of depression so that you can address it early. When you find yourself feeling down or hopeless about things, start to monitor how you’re feeling and try using strategies that have worked for you in the past.</p>
+                        <ul>
+                            <li>Keep a mood diary</li>
+                            <li>Exercise or doing things you enjoy are good tools to improve your mood.</li>
+                        </ul>
+                    </>
+                ),
+            },
         }
     },
 
