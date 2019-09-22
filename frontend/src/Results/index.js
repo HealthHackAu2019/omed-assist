@@ -6,7 +6,7 @@ import painIcon from './pain.png';
 import opioidIcon from './opioid.png';
 import logo from '../logo.svg';
 import GoalSetting from './goalSetting';
-import ResultSummaryChart from "./ResultSummaryChart";
+import ResultSummaryChart from "./ResultSummaryChart2";
 
 class Results extends Component {
   getMessage(results) {
