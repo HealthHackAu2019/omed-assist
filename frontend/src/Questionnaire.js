@@ -20,6 +20,7 @@ import styles from "./Questionnaire.module.css"
 import logo from "./logo.svg";
 import { ortJson } from "./OrtSurvey";
 import { createQuestionnareResultsFromRaw } from "./questionnaireState";
+import { Link } from 'react-router-dom';
 
 window["$"] = window["jQuery"] = $;
 
@@ -75,7 +76,7 @@ export class Questionnaire extends Component {
     render() {
         return (
             <div className="questionnaire">
-                <img src={logo} className={styles.logo} alt="Logo" />
+                <Link to="/"><img src={logo} className={styles.logo} alt="Logo" /></Link>
                 <div className="surveyjs">
                     <Survey.Survey model={this.state.survey} />
                 </div>
