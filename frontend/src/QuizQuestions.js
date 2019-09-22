@@ -151,7 +151,7 @@ export const quizJson = {
      {
       "type": "html",
       "name": "end_of_survey",
-      "html": "You have reched the end of the quiz. Click <a href=\"/\">here</a> to return to the main screen"
+      "html": "<h2>Finished</h2><p>If you're interested in continuing o find out more you can take our <a href='#/questionnaire'>survey</a>.</p>"
      }
     ]
    }
