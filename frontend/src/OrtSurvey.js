@@ -125,7 +125,7 @@ export const ortJson =
                     name: "age",
                     title: "What is your age?",
                     colCount: 1,
-                    choices: _.range(18, 100, 1)
+                    choices: _.range(18, 100, 1).map(toString)
                 }
             ]
         },
@@ -229,28 +229,28 @@ export const ortJson =
                     "type": "dropdown",
                     "title": "You pain at its WORST in the LAST week",
                     "colCount": 1,
-                    "choices": _.range(0, 11, 1)
+                    "choices": _.range(0, 11, 1).map(toString)
                 },
                 {
                     "name": "least_pain_last_week",
                     "type": "dropdown",
                     "title": "You pain at its LEAST in the LAST week",
                     "colCount": 1,
-                    "choices": _.range(0, 11, 1)
+                    "choices": _.range(0, 11, 1).map(toString)
                 },
                 {
                     "name": "avg_pain",
                     "type": "dropdown",
                     "title": "Your pain on AVERAGE",
                     "colCount": 1,
-                    "choices": _.range(0, 11, 1)
+                    "choices": _.range(0, 11, 1).map(toString)
                 },
                 {
                     "name": "pain_now",
                     "type": "dropdown",
                     "title": "How much pain do you have RIGHT NOW?",
                     "colCount": 1,
-                    "choices": _.range(0, 11, 1)
+                    "choices": _.range(0, 11, 1).map(toString)
                 }
             ]
         },
