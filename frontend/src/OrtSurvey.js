@@ -204,7 +204,7 @@ export const ortJson =
                 {
                     type: "html",
                     name: "demographic_intro",
-                    html: "<h2>All about Opioids</h2><p>Now let's talk about opioids. The most commonly prescribed opioids are <ul><li>Codein</li><li>Morphine</li></ul></p>"
+                    html: "<h2>All about Opioids</h2><p>Now let's talk about opioids. The most commonly prescribed opioids are <ul><li>Codeine</li><li>Morphine</li></ul></p>"
                 }
             ]
         },

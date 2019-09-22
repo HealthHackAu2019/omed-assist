@@ -33,7 +33,7 @@ class Results extends Component {
     return (
       <div className={styles.result}>
         <div className={styles.resultIcon}>
-          <img src={icon} alt="Icon" />
+          <img src={icon} alt="" />
         </div>
         <div className={styles.resultMessage}>
           <h3>{title}</h3>
@@ -49,7 +49,7 @@ class Results extends Component {
 
     return (
       <div className={styles.container}>
-        <img src={logo} className={styles.logo} />
+        <img src={logo} className={styles.logo} alt="Oped Assist" />
         <div className={styles.results}>
           <h1>Your Results</h1>
           <p className={styles.summary}>{message.summary}</p>
