@@ -20,7 +20,7 @@ function yesNoStringToNullableBoolean(s) {
 
 export function createQuestionnareResultsFromRaw(rawQuestionnareResults) {
 
-    console.log(JSON.stringify(rawQuestionnareResults));
+    console.log("RAW Q RESULTS", JSON.stringify(rawQuestionnareResults));
 
     const data = rawQuestionnareResults;
 
@@ -51,7 +51,13 @@ export function createQuestionnareResultsFromRaw(rawQuestionnareResults) {
             nullableStringToNullableInt(_.get(data, ["depression_index_5"])),
             nullableStringToNullableInt(_.get(data, ["depression_index_6"])),
             nullableStringToNullableInt(_.get(data, ["depression_index_7"])),
-        ]
+        ],
+        pain: {
+            worstLastWeek: nullableStringToNullableInt(_.get(data, ["worst_pain_last_week"])),
+            leastLastWeek: nullableStringToNullableInt(_.get(data, ["least_pain_last_week"])),
+            average: nullableStringToNullableInt(_.get(data, ["avg_pain"])),
+            now: nullableStringToNullableInt(_.get(data, ["pain_now"]))
+        }
     }
 }
 function calculateRisk(state) {
@@ -67,7 +73,7 @@ function calculateRisk(state) {
 
     const maxScore = features.length;
 
-    const incomplete  = features.filter(s => s === null).length > 0;
+    const incomplete = features.filter(s => s === null).length > 0;
 
     const score = _(features)
         .filter(s => s !== null)
@@ -87,9 +93,18 @@ function calculateRisk(state) {
 }
 
 function calculatePain(state) {
+
+    const features = _.values(state.pain);
+    const score = _(features).filter(x => x !== null).sum() / features.length;
+    const maxScore = 10;
+    const level = score > 4 ? "significant" : "non_significant";
+    const incomplete = features.filter(x => x === null).length > 0;
+
     return {
-        score: 0,
-        incomplete: true
+        score: score,
+        maxScore: maxScore,
+        level: level,
+        incomplete: incomplete
     };
 }
 
