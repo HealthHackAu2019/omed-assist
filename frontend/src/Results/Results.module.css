@@ -5,11 +5,17 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    background: var(--primaryColor) url(topbar.svg) no-repeat top center;
 }
 
 .results {
     background-color: #FFF;
+    box-shadow: 0 0px 2px rgba(0, 0, 0, .3);
     padding: 25px;
+}
+
+.logo {
+    display: none;
 }
 
 .summary {
@@ -57,4 +63,14 @@ h3 {
         padding: 50px;
         margin: 150px 0;
     }
+
+
+    .logo {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        height: 80px;
+    }
+
 }

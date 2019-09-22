@@ -4,6 +4,7 @@ import feedback from './feedback';
 import depressionIcon from './depression.png';
 import painIcon from './pain.png';
 import opioidIcon from './opioid.png';
+import logo from '../logo.svg';
 import ResultSummaryChart from "./resultSummaryChart";
 import GoalSetting from './goalSetting';
 
@@ -48,6 +49,7 @@ class Results extends Component {
 
     return (
       <div className={styles.container}>
+        <img src={logo} className={styles.logo} />
         <div className={styles.results}>
           <h1>Your Results</h1>
           <p className={styles.summary}>{message.summary}</p>
