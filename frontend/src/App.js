@@ -7,7 +7,7 @@ import Results from "./Results/index"
 import Questionnaire from "./Questionnaire";
 import Quiz from "./Quiz";
 import NotFound from "./NotFound/NotFound";
-import { createQuestionnareResultsFromRaw } from "./questionnaireState";
+import { createQuestionnareResultsFromRaw, calculateResults } from "./questionnaireState";
 import { saveResult } from "./saveResult";
 
 class App extends Component {
@@ -27,7 +27,8 @@ class App extends Component {
 
         this.setState({
             ...this.state,
-            questionnaire: questionnaireState
+            questionnaire: questionnaireState,
+            results: calculateResults(questionnaireState)
         });
     }
 
@@ -39,7 +40,7 @@ class App extends Component {
                         <Route path="/" exact component={Home} />
                         <Route path="/questionnaire" render={props => <Questionnaire {...props} setQuestionnaireState={this.setQuestionnaireState.bind(this)} />} />
                         <Route path="/quiz" render={props => <Quiz {...props} />} />
-                        <Route path="/results" render={props => <Results {...props} results={this.state.questionnaire.results} />} />
+                        <Route path="/results" render={props => <Results {...props} results={this.state.results} />} />
                         <Route component={NotFound} />
                     </Switch>
                 </Router>
