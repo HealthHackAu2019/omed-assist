@@ -57,6 +57,10 @@ export function createQuestionnareResultsFromRaw(rawQuestionnaireResults) {
         sex: _.get(data, ["sex"]),
         aboriginalOrTorresStrait: _.get(data, ["ab_or_ts"]),
         hadRecentEvent: _.get(data, ["had_recent_event"]),
+        recentEvent: _.get(data, ["recent_event"]),
+        experiencedPain: _.get(data, ["exp_pain"]),
+        painPeriod: _.get(data, ["pain_period"]),
+        medicationSummary: _.get(data, ["medication_summary"]),
         familyHistory: {
             alcohol: yesNoStringToNullableBoolean(_.get(data, ["family_history", "fh_alcohol", ""], "")),
             illicitDrugs: yesNoStringToNullableBoolean(_.get(data, ["family_history", "fh_illicit_drugs", ""], "")),
