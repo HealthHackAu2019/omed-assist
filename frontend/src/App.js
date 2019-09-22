@@ -5,6 +5,7 @@ import Home from "./Home/index"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Results from "./Results/index"
 import Questionnaire from "./Questionnaire";
+import Quiz from "./Quiz";
 import NotFound from "./NotFound/NotFound";
 import { createQuestionnareResultsFromRaw } from "./questionnaireState";
 import { saveResult } from "./saveResult";
@@ -37,6 +38,7 @@ class App extends Component {
                     <Switch>
                         <Route path="/" exact component={Home} />
                         <Route path="/questionnaire" render={props => <Questionnaire {...props} setQuestionnaireState={this.setQuestionnaireState.bind(this)} />} />
+                        <Route path="/quiz" render={props => <Quiz {...props} />} />
                         <Route path="/results" render={props => <Results {...props} results={this.state.questionnaire.results} />} />
                         <Route component={NotFound} />
                     </Switch>
