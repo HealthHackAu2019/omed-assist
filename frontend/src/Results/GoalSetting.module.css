@@ -1,0 +1,12 @@
+
+.list li {
+    padding: 8px 18px;
+}
+
+.goalText {
+    font-size: 16pt;
+    border: 1px solid grey;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+}
