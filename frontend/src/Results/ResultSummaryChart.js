@@ -37,10 +37,14 @@ class ResultSummaryChart extends Component {
         const pain = this.props.results.pain;
 
         const features = [
-            { title: "Pain", value: pain.score, maxValue: pain.maxScore, color: "#7BDFC2", textXOffset: 0, textYOffset: 0 },
-            { title: "Depression", value: depression.score, maxValue: depression.maxScore, color: "#8330F3", textXOffset: 0, textYOffset: 0 },
-            { title: "Opioid Use Risk", value: risk.score, maxValue: risk.maxScore, color: "#EAA745", textXOffset: 0, textYOffset: 0 },
+            { title: "Pain", value: pain.score, maxValue: pain.maxScore, color: "#7BDFC2" },
+            { title: "Depression", value: depression.score, maxValue: depression.maxScore, color: "#8330F3" },
+            { title: "Opioid Use Risk", value: risk.score, maxValue: risk.maxScore, color: "#EAA745" },
         ];
+
+        features[0].value = 6;
+        features[1].value = 20;
+        features[2].value = 3;
 
         const primaryColor = "#9013FE";
         const dimensions = features.length;
@@ -84,17 +88,13 @@ class ResultSummaryChart extends Component {
                 const height = radius * Math.sin(feature.angle);
                 const x = 50 + width;
                 const y = 50 + height
-                const xOffset = feature.textXOffset;
-                const yOffset = feature.textYOffset;
                 return [
                     <svg x={x} y={y} key={`text-${feature.id}`} className={styles.text}>
-                        <g>
-                            <text x={xOffset} y={yOffset + 5} textAnchor="middle">
-                                <tspan className={styles.value}>{feature.value}</tspan>
-                                <tspan className={styles.maxValue}>/{feature.maxValue}</tspan>
-                            </text>
-                            <text x={xOffset} y={yOffset + 11} className={styles.title} textAnchor="middle">{feature.title}</text>
-                        </g>
+                        <text x={0} y={5} textAnchor="middle">
+                            <tspan className={styles.value}>{feature.value}</tspan>
+                            <tspan className={styles.maxValue}>/{feature.maxValue}</tspan>
+                        </text>
+                        <text x={0} y={11} className={styles.title} textAnchor="middle">{feature.title}</text>
                     </svg>
                 ];
             })
