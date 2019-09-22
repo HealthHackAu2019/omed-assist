@@ -246,7 +246,7 @@ export const ortJson =
                     "choices": _.range(0, 11, 1)
                 },
                 {
-                    "name": "paing_now",
+                    "name": "pain_now",
                     "type": "dropdown",
                     "title": "How much pain do you have RIGHT NOW?",
                     "colCount": 1,
