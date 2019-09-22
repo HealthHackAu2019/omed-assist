@@ -1,10 +1,5 @@
 @import "Vars.css";
 
-.questionnaire 
-{
-    height: 100vh;
-    width: 100vw;
-}
 
 .sv_main {
     background-color: transparent !important; 
@@ -51,11 +46,25 @@
 
 .sv_body
 {
-    background-color: transparent !important; 
+    background-color: white !important;
+    box-shadow: 0 0px 2px rgba(0, 0, 0, .3);
     border: none !important;
     margin: auto;
     max-width: 800px;
     padding-top: 0px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.sv_nav {
+    min-height: 2.8em !important;
+}
+
+.sv_nav .sv_next_btn,
+.sv_nav .sv_prev_btn,
+.sv_nav .sv_complete_btn {
+    margin-left: 1em !important;
+    margin-right: 1em !important;
 }
 
 .sv_main.sv_default_css .sv_progress_bar
