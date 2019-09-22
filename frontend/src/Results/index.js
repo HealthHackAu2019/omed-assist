@@ -11,7 +11,11 @@ import ResultSummaryChart from "./ResultSummaryChart";
 class Results extends Component {
   getMessage(results) {
     // TODO: Add in results.risk.depression check
-    return feedback[results.risk.level][results.depression.simplifiedLevel][results.pain.level];
+    try {
+      return feedback[results.risk.level][results.depression.simplifiedLevel][results.pain.level];
+    } catch {
+      return feedback['high']['mild_moderate']['significant'];
+    }
   }
 
   getGeneticDisposition(result) {
