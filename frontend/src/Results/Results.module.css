@@ -20,10 +20,28 @@
     font-weight: 100;
 }
 
-h2 {
+h1, h2 {
     font-weight: 100 !important;
 }
 
 .feedback {
   flex-basis: 75%;
+}
+
+.result {
+    display: flex;
+    flex-direction: row;
+}
+
+.resultIcon {
+    width: 150px;
+    flex-shrink: 0;
+}
+
+.resultMessage {
+    flex-grow: 1;
+}
+
+.goalSetting li {
+    padding: 8px 18px;
 }
