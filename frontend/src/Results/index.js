@@ -7,6 +7,7 @@ import opioidIcon from './opioid.png';
 import logo from '../logo.svg';
 import GoalSetting from './goalSetting';
 import ResultSummaryChart from "./ResultSummaryChart";
+import { Link } from 'react-router-dom';
 
 class Results extends Component {
   getMessage(results) {
@@ -53,7 +54,7 @@ class Results extends Component {
 
     return (
       <div className={styles.container}>
-        <img src={logo} className={styles.logo} alt="Oped Assist" />
+        <Link to="/"><img src={logo} className={styles.logo} alt="Oped Assist" /></Link>
         <div className={styles.results}>
           <h1>Your Results</h1>
           <p className={styles.summary}>{message.summary}</p>

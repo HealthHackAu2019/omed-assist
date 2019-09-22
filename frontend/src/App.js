@@ -7,7 +7,7 @@ import Results from "./Results/index"
 import Questionnaire from "./Questionnaire";
 import Quiz from "./Quiz";
 import NotFound from "./NotFound/NotFound";
-import { createQuestionnareResultsFromRaw, calculateResults } from "./questionnaireState";
+import { createQuestionnareResultsFromRaw, calculateResults, defaultRawQuestionnaireResults } from "./questionnaireState";
 import { saveResult } from "./saveResult";
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         const questionnaireResults = {
-            results: createQuestionnareResultsFromRaw({}),
+            results: createQuestionnareResultsFromRaw(defaultRawQuestionnaireResults()),
             completed: false
         };
         this.state = {

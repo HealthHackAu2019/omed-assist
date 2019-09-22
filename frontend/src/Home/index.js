@@ -11,7 +11,7 @@ const Home = () => {
                 <header>
                     <img src={logo} alt="Omed Assist" />
                     <span>
-                        <p  className={styles.tagLine}>Helping you navigate<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; your pain relief journey</p>
+                        <p className={styles.tagLine}>Helping you navigate<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; your pain relief journey</p>
                     </span>
                 </header>
                 <div>

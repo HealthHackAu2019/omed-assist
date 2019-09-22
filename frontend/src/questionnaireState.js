@@ -18,11 +18,39 @@ function yesNoStringToNullableBoolean(s) {
     }
 }
 
-export function createQuestionnareResultsFromRaw(rawQuestionnareResults) {
+export function defaultRawQuestionnaireResults() {
+    return {
+        "worst_pain_last_week": "10",
+        "least_pain_last_week": "10",
+        "family_history": {
+            "fh_alcohol": {
+                "": "Yes"
+            },
+            "fh_illicit_drugs": {
+                "": "Yes"
+            }
+        },
+        "self_substance": {
+            "ss_alcohol": {
+                "": "Yes"
+            },
+            "ss_illicit_drugs": {
+                "": "Yes"
+            }
+        },
+        "conditions": {
+            "Depression": "Yes"
+        },
+        "depression_index_1": "4",
+        "depression_index_2": "4"
+    };
+}
 
-    console.log("RAW Q RESULTS", JSON.stringify(rawQuestionnareResults));
+export function createQuestionnareResultsFromRaw(rawQuestionnaireResults) {
 
-    const data = rawQuestionnareResults;
+    console.log("RAW Q RESULTS", JSON.stringify(rawQuestionnaireResults));
+
+    const data = rawQuestionnaireResults;
 
     return {
         age: _.get(data, ["age_group"]),
