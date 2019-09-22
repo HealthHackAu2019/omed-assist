@@ -260,8 +260,13 @@ export const ortJson =
                 {
                     type: "html",
                     name: "demographic_intro",
-                    html: "<p>Hello. Thanks for being here.</p><p>Let's start with some basics.</p>"
-                },
+                    html: "<p>Information about opioids</p><ul><li>Morphine</li><li>Oxycodone</li><li>Codein</li><li>Tramadol</li><li>Tapentadol</li></ul>"
+                }
+            ]
+        },
+        {
+            "name": "page0",
+            "elements": [
                {
                 "name": "medication_summary",
                 "type": "radiogroup",
