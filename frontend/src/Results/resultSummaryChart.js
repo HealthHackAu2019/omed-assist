@@ -79,7 +79,7 @@ class ResultSummaryChart extends Component {
 
         const featureText = _(featurePositions)
             .map(feature => {
-                const radius = feature.radius + 10 + 10 / (feature.radius + 1);
+                const radius = feature.radius + 15 + 5 / (feature.radius + 1);
                 const width = radius * Math.cos(feature.angle);
                 const height = radius * Math.sin(feature.angle);
                 const x = 50 + width;
