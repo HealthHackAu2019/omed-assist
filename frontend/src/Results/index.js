@@ -1,30 +1,11 @@
 import React, { Component } from "react";
 import styles from "./Results.module.css";
 import feedback from './feedback';
+import depressionIcon from './depression.png';
+import painIcon from './pain.png';
+import opioidIcon from './opioid.png';
 import ResultSummaryChart from "./resultSummaryChart";
-
-/*
-  {
-    risk: {
-        score: 2,
-        maxScore: 0,
-        level: "low|high",
-        anyFamilyHistoryOfMisuse: true,
-        incomplete: true,
-        depression: true|false
-    },
-    depression: {
-        score: 0,
-        maxScore: 0,
-        level: "normal|mild-moderate|severe-extremely_severe",
-    },
-    pain: {
-        score: 0,
-        maxScore: 0,
-        level: "non_significant|significant"
-    }
-}
-*/
+import GoalSetting from './goalSetting';
 
 class Results extends Component {
   getMessage(results) {
@@ -74,18 +55,11 @@ class Results extends Component {
           <div><ResultSummaryChart /></div>
 
           <h2>Understanding your results</h2>
-          {this.renderResult(null, 'Pain', message.pain)}
-          {this.renderResult(null, 'Opioid Risk', message.opioid)}
-          {this.renderResult(null, 'Depression', message.depression)}
+          {this.renderResult(painIcon, 'Pain', message.pain)}
+          {this.renderResult(opioidIcon, 'Opioid Risk', [message.opioid, this.getGeneticDisposition(results)])}
+          {this.renderResult(depressionIcon, 'Depression', message.depression)}
 
-          <h2>Planning your recovery</h2>
-          <p>Setting goals will help you navigate your pain relief journey.</p>
-          
-          <ol className={styles.goalSetting}>
-            <li><input type="text" /></li>
-            <li><input type="text" /></li>
-            <li><input type="text" /></li>
-          </ol>
+          <div><GoalSetting /></div>
         </div>
       </div>
     );
