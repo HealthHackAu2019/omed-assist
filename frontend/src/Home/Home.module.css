@@ -5,11 +5,16 @@
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    background: var(--backgroundColor) url(background_vertical.svg) no-repeat bottom right;
+    background: var(--backgroundColor) url(background_vertical.svg) no-repeat bottom left;
+    background-size: 100% auto;
 }
 
 .hero {
     width: 100vw;
+}
+
+.logo {
+    max-width: 90% !important;
 }
 
 .content {
@@ -24,6 +29,10 @@
     margin-top: 25px;
 }
 
+.takeSurvey{
+    padding: 20px;
+    text-align: center;
+}
 .takeSurvey span {
     color: var(--lightContrastColor);
     font-size: 15pt;
@@ -66,7 +75,8 @@
     border: none;
     box-shadow: 0 1px 2px var(--darkcontrastcolor);
     order: 1;
-    width: 500px;
+    width: 90%;
+    display: inline-block;
 }
 
 @media(min-width: 1160px) {
@@ -95,7 +105,67 @@
         height: 50vh;
         position: absolute;
         bottom: 50px;
-        left: 50px;
+        left: -300px;
         width: auto;
+    }
+
+    .tagLine {
+        display: block !important;
+    }
+}
+
+@media(min-width: 789px) {
+    .main {
+        flex-direction: row;
+        background:
+            url(background.svg) no-repeat bottom right;
+        background-size: auto 100%;
+    }
+
+    .main header {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+    }
+
+    .takeSurvey {
+        position: absolute;
+        right: 40px;
+        width: 500px;
+        text-align: right;
+    }
+
+    .takeSurvey :global(.btn.btn-primary),
+    .takeSurvey :global(.btn.btn-primary):hover,
+    .takeSurvey :global(.btn.btn-primary):focus,
+    .takeSurvey :global(.btn.btn-primary):active {
+        width: 500px;
+    }
+
+    .hero {
+        width: 60vw;
+        position: absolute;
+        bottom: 50px;
+        left: -100px;
+    }
+
+    .tagLine {
+        display: none;
+    }
+
+    .takeSurvey :global(.btn.btn-primary),
+    .takeSurvey :global(.btn.btn-primary):hover,
+    .takeSurvey :global(.btn.btn-primary):focus,
+    .takeSurvey :global(.btn.btn-primary):active {
+        background-color: var(--accentColor);
+        padding: 20px 26px;
+        font-size: 20pt;
+        margin-top: 0.5em;
+        color: var(--darkcontrastcolor);
+        border: none;
+        box-shadow: 0 1px 2px var(--darkcontrastcolor);
+        order: 1;
+        width: 500px;
+        display: inline-block;
     }
 }
