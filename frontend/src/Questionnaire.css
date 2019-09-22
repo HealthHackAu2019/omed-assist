@@ -5,12 +5,20 @@
     height: 100vh;
     width: 100vw;
     background-color: var(--primaryColor);
+    
 }
 
 .sv_main {
     background-color: transparent !important; 
+    font-family: 'Roboto' !important;
+    font-weight: light;
 }
 
+.sv_q_title {
+    font-weight: bold !important;
+    font-size: 20px !important;
+}
+    
 .sv_custom_header {
     background-color: transparent !important; 
 }
@@ -43,7 +51,6 @@
     background-color: transparent !important; 
     border: none !important;
     margin: auto;
-    font-size: 20px;
     max-width: 800px;
     padding-top: 0px !important;
 }
@@ -61,6 +68,7 @@
 .sv_q_radiogroup_label
 {
     margin-right: 10px !important;
+    font-weight: 200 !important;
 }
 
 body 
