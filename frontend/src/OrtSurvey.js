@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 const choiceJson = [
     {
         "value": "1",
@@ -119,20 +121,11 @@ export const ortJson =
             "name": "page1",
             "elements": [
                 {
-                    type: "radiogroup",
+                    type: "dropdown",
                     name: "age",
                     title: "What is your age?",
                     colCount: 1,
-                    choices: [
-                        "Up to 20",
-                        "21 to 30",
-                        "31 to 40",
-                        "41 to 50",
-                        "51 to 60",
-                        "61 to 70",
-                        "71 to 80",
-                        "81 and over"
-                    ]
+                    choices: _.range(18, 100, 1)
                 }
             ]
         },
@@ -162,44 +155,24 @@ export const ortJson =
             ]
         },
         {
-            "name": "page4",
-            "elements": [
-                yesNo("surgery", "Are you about to have surgery or recently had surgery?")
-            ]
-        },
-        {
             "name": "page0",
             "elements": [
                 {
                     type: "html",
                     name: "demographic_intro",
-                    html: "<p>Thanks for that. Now let's talk about your pain.</p>"
+                    html: "<p>What's happening in your life, surgery etc.</p>"
                 }
             ]
         },
         {
             "name": "page5",
             "elements": [
-                yesNo("exp_pain", "Are you currently experiencing pain?"),
+                yesNo("had_recent_event", "Have you had a recent injury or medical procedure?"),
                 {
-                    "visibleIf": "{exp_pain}='Yes'",
-                    "name": "pain_period",
-                    "type": "bootstrapslider",
-                    "title": "For how many weeks have you been experiencing pain?",
-                    "step": 1,
-                    "rangeMin": 1,
-                    "rangeMax": 12
-                }
-            ]
-        },
-        {
-            "name": "page6",
-            "elements": [
-                {
-                    "visibleIf": "{exp_pain}='Yes'",
+                    "visibleIf": "{had_recent_event}='Yes'",
                     "type": "dropdown",
-                    "name": "pain_source",
-                    "title": "What was the source of your pain?",
+                    "name": "recent_event",
+                    "title": "What was is?",
                     "colCount": 0,
                     "choices": [
                         "Injury at home",
@@ -209,63 +182,76 @@ export const ortJson =
                         "Medical condition other than cancer",
                         "Unknown"
                     ]
-                },
-            ]
-        },
-        {
-            "name": "page7",
-            "elements": [
-                {
-                    type: "html",
-                    name: "info",
-                    html: "<p>The following questions refer to your past, current, and planned opioid use. If you are unsure of whether you have taken opioids before you can consult the <a target=_blank href='https://adf.org.au/drug-facts/#wheel'>ADF Drug Wheel</a></p>"
                 }
             ]
         },
         {
-            "name": "page8",
+            "name": "page5",
             "elements": [
-                yesNo("ever_used_prescribed", "Have you ever used prescription opioid medications?"),
-                medicationPanel("previous_opioid_pres", 1, "past", "{ever_used_prescribed}='Yes'")
+                yesNo("has_planned_event", "Do you have a medical procedure planned in the near future?", "{had_recent_event}='No'"),
+                {
+                    "visibleIf": "{has_planned_event}='Yes'",
+                    "type": "text",
+                    "name": "planned_event",
+                    "title": "What was is?"
+                }
             ]
         },
         {
-            "name": "page9",
+            "name": "page6",
             "elements": [
+                yesNo("exp_pain", "Are you in pain right now?"),
                 {
-                    visibleIf: "{ever_used_prescribed}='Yes'",
-                    type: "radiogroup",
-                    name: "how_long_ago_prescribed",
-                    title: "When was the last time you used prescription opioid medications?",
-                    colCount: 1,
-                    choices: [
-                        "In the last week",
-                        "In the last month",
-                        "Over 3 months ago",
-                        "Over a year ago"
+                    "visibleIf": "{exp_pain}='Yes'",
+                    "name": "pain_period",
+                    "type": "radiogroup",
+                    "title": "How long have you had this pain?",
+                    "colCount": 1,
+                    "choices": [
+                        "Less than a week",
+                        "Less than a month",
+                        "Less than 3 months",
+                        "Longer"
                     ]
                 }
             ]
         },
         {
-            "name": "page10",
+            "name": "page6",
             "elements": [
-                yesNo("currently_using_prescribed_opioid", "Do you currently use any prescribed opioid medications?"),
-                medicationPanel("currently_using_prescribed_opioid", 1, "current", "{currently_using_prescribed_opioid}='Yes'")
-            ]
-        },
-        {
-            "name": "page11",
-            "elements": [
-                yesNo("considering_taking_opioids", "Are you currently considering using prescription opioid medications?"),
-                medicationPanel("considering_taking_opioids", 1, "present", "{considering_taking_opioids}='Yes'")
-            ]
-        },
-        {
-            "name": "page12",
-            "elements": [
-                yesNo("uses_other_medications", "Do you currently use any other medications?"),
-                medicationPanel("current_other_medications", 1, "current", "{uses_other_medications}='Yes'")
+                {
+                    type: "html",
+                    name: "demographic_intro",
+                    html: "<p>Please provide a score from 0 to 10 for the following. Consider 0 to be no pain at all and 10 to be the worst pain imaginable.</p>"
+                },
+                {
+                    "name": "worst_pain_last_week",
+                    "type": "dropdown",
+                    "title": "You pain at its WORST in the LAST week",
+                    "colCount": 1,
+                    "choices": _.range(0, 11, 1)
+                },
+                {
+                    "name": "least_pain_last_week",
+                    "type": "dropdown",
+                    "title": "You pain at its LEAST in the LAST week",
+                    "colCount": 1,
+                    "choices": _.range(0, 11, 1)
+                },
+                {
+                    "name": "avg_pain",
+                    "type": "dropdown",
+                    "title": "Your pain on AVERAGE",
+                    "colCount": 1,
+                    "choices": _.range(0, 11, 1)
+                },
+                {
+                    "name": "paing_now",
+                    "type": "dropdown",
+                    "title": "How much pain do you have RIGHT NOW?",
+                    "colCount": 1,
+                    "choices": _.range(0, 11, 1)
+                }
             ]
         },
         {
@@ -274,8 +260,29 @@ export const ortJson =
                 {
                     type: "html",
                     name: "demographic_intro",
-                    html: "<p>Lastly, let's explore your medical and family history.</p>"
-                }
+                    html: "<p>Hello. Thanks for being here.</p><p>Let's start with some basics.</p>"
+                },
+               {
+                "name": "medication_summary",
+                "type": "radiogroup",
+                "title": "Which of the following best describes your opioid history?",
+                "colCount": 1,
+                "choices": [
+                    "I've never used opioids",
+                    "I'm currently using opioids",
+                    "I'm starting my first course of opioids in the near future"
+                ]
+            }
+            ]
+        },
+        {
+            "name": "page0",
+            "elements": [
+                {
+                    type: "html",
+                    name: "demographic_intro",
+                    html: "<p>Lastly, let's explore your medical and family history.</p>" 
+               }
             ]
         },
         {
