@@ -53,7 +53,7 @@ export function createQuestionnareResultsFromRaw(rawQuestionnaireResults) {
     const data = rawQuestionnaireResults;
 
     return {
-        age: nullableStringToNullableInt(_.get(data, ["age_group"])),
+        age: nullableStringToNullableInt(_.get(data, ["age"])),
         sex: _.get(data, ["sex"]),
         aboriginalOrTorresStrait: _.get(data, ["ab_or_ts"]),
         hadRecentEvent: _.get(data, ["had_recent_event"]),
