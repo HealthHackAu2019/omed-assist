@@ -7,7 +7,7 @@ class Results extends Component {
   render() {
     const { level, results } = this.props;
 
-    console.log(JSON.stringify(results));
+    console.log("CALCULATED SCORES", JSON.stringify(results));
 
     return (
       <div className={styles.container}>

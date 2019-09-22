@@ -15,8 +15,7 @@ const createPayload = (result) => {
 }
 
 export const saveResult = (result) => {
-  console.log(result);
-  console.log(JSON.stringify(result, null, 2));
+  console.log("Q RESULTS", JSON.stringify(result, null, 2));
 
   return base('Survey').create(
     [ createPayload(result) ], 
