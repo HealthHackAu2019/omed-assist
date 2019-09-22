@@ -108,14 +108,16 @@ class ResultSummaryChart extends Component {
             });
 
         return (
-            <svg viewBox={`0 0 100 100`} width="100%" height="50vh" className={styles.container}>
-                <circle cx="50" cy="50" r={majorTickRadius} stroke="rgba(0,0,0,0.1)" strokeWidth="0.25" fill="none" />
-                {tickCircles}
-                {lines}
-                <polygon points={polygonPoints} fill={primaryColor + "1A"} stroke={primaryColor} strokeWidth="0.5" />
-                {featureCircles}
-                {featureText}
-            </svg>
+            <div className={styles.container}>
+                <svg viewBox={`0 0 100 100`} className={styles.chart}>
+                    <circle cx="50" cy="50" r={majorTickRadius} stroke="rgba(0,0,0,0.1)" strokeWidth="0.25" fill="none" />
+                    {tickCircles}
+                    {lines}
+                    <polygon points={polygonPoints} fill={primaryColor + "1A"} stroke={primaryColor} strokeWidth="0.5" />
+                    {featureCircles}
+                    {featureText}
+                </svg>
+            </div>
         );
     }
 }
