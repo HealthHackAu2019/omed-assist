@@ -5,8 +5,8 @@ import depressionIcon from './depression.png';
 import painIcon from './pain.png';
 import opioidIcon from './opioid.png';
 import logo from '../logo.svg';
-import ResultSummaryChart from "./resultSummaryChart";
 import GoalSetting from './goalSetting';
+import ResultSummaryChart from "./ResultSummaryChart";
 
 class Results extends Component {
   getMessage(results) {
@@ -54,11 +54,11 @@ class Results extends Component {
           <h1>Your Results</h1>
           <p className={styles.summary}>{message.summary}</p>
 
-          <div><ResultSummaryChart /></div>
+          <div><ResultSummaryChart results={results} /></div>
 
           <h2>Understanding your results</h2>
           {this.renderResult(painIcon, 'Pain', message.pain)}
-          {this.renderResult(opioidIcon, 'Opioid Risk', [message.opioid, this.getGeneticDisposition(results)])}
+          {this.renderResult(opioidIcon, 'Opioid Risk', <>{message.opioid} {this.getGeneticDisposition(results)}</>)}
           {this.renderResult(depressionIcon, 'Depression', message.depression)}
 
           <div><GoalSetting /></div>

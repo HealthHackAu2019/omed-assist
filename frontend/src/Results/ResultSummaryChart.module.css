@@ -1,0 +1,24 @@
+.container {
+    overflow: visible !important;
+}
+
+.text {
+    overflow: visible !important;
+}
+
+.text g {
+}
+
+.value {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.maxValue {
+    font-size: 5px;
+}
+
+.title {
+    font-size: 5px;
+    font-weight: 300;
+}

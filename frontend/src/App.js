@@ -14,11 +14,13 @@ class App extends Component {
 
     constructor(props) {
         super(props);
+        const questionnaireResults = {
+            results: createQuestionnareResultsFromRaw({}),
+            completed: false
+        };
         this.state = {
-            questionnaire: {
-                results: createQuestionnareResultsFromRaw({}),
-                completed: false
-            }
+            questionnaire: questionnaireResults,
+            results: calculateResults(questionnaireResults)
         }
     }
 
