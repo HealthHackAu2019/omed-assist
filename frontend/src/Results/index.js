@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./Results.module.css";
 import feedback from './feedback';
+import ResultSummaryChart from "./resultSummaryChart";
 
 /*
   {
@@ -50,7 +51,7 @@ class Results extends Component {
     return (
       <div className={styles.result}>
         <div className={styles.resultIcon}>
-          <img src={icon} />
+          <img src={icon} alt="Icon" />
         </div>
         <div className={styles.resultMessage}>
           <h3>{title}</h3>
@@ -70,7 +71,7 @@ class Results extends Component {
           <h1>Your Results</h1>
           <p className={styles.summary}>{message.summary}</p>
 
-          <div>CHART</div>
+          <div><ResultSummaryChart /></div>
 
           <h2>Understanding your results</h2>
           {this.renderResult(null, 'Pain', message.pain)}
@@ -80,7 +81,7 @@ class Results extends Component {
           <h2>Planning your recovery</h2>
           <p>Setting goals will help you navigate your pain relief journey.</p>
           
-          <ol class={styles.goalSetting}>
+          <ol className={styles.goalSetting}>
             <li><input type="text" /></li>
             <li><input type="text" /></li>
             <li><input type="text" /></li>

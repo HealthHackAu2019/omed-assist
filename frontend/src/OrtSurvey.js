@@ -48,62 +48,6 @@ const yesNo = (name, question, visibleIf) => {
     return item;
 };
 
-const medicationPanel = (name, index, tense, visibleIf) => {
-    
-    const isOrWas = tense === "past" ? "was" : "is";
-    const didOrDo = tense === "past" ? "did" : "do";
-    const prefix = name + "_" + index;
-    
-    const panel = {
-        "type": "paneldynamic",
-        "name": prefix + "_medications",
-        "title": "Medication List",
-        "templateTitle": "Medicine Details",
-        "templateElements": [
-            {
-                name: prefix + "_medicine_name",
-                title: "What " + isOrWas + " the medicine name (as per the label)?",
-                type: "text"
-            },
-            {
-                name: prefix + "_medicine_strength_in_mg",
-                title: "What " + isOrWas + " medicine strength (as per the label) in mg?",
-                type: "text"
-            },
-            {
-                name: prefix + "_medicine_times_per_day",
-                title: "How many times per day " + didOrDo + " you take it?",
-                type: "text",
-                inputType: "number"
-            },
-            {
-                name: prefix + "_medicine_reason",
-                title: "Why " + didOrDo + " you take this medication?",
-                type: "text"
-            },
-            {
-                name: prefix + "_medicine_delivery_method",
-                title: "How " + didOrDo + " you take it?",
-                type: "dropdown",
-                colCount: 0,
-                choices: [
-                    "Oral",
-                    "Transdermal",
-                    "Parenteral (injection)",
-                    "Rectal",
-                    "Sublingual (Under your tongue)"
-                ]
-            }
-        ],
-        "panelCount": 1,
-        "panelAddText": "Add another medication",
-        "panelRemoveText": "Remove this medication"
-    }
-    
-    if (visibleIf) panel.visibleIf = visibleIf;
-    return panel;
-}
-
 export const ortJson = 
 {
     "pages": [
