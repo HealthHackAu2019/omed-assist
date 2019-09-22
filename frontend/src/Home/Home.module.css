@@ -5,7 +5,7 @@
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    background: var(--backgroundColor) url(background_vertical.svg) no-repeat bottom center;
+    background: var(--backgroundColor) url(background_vertical.svg) no-repeat bottom right;
 }
 
 .hero {
@@ -15,6 +15,13 @@
 .content {
     display: flex;
     align-content: space-around;
+}
+
+.tagLine {
+    font-size: 25px !important;
+    font-style: italic;
+    padding-left: 30px;
+    margin-top: 25px;
 }
 
 .takeSurvey span {
@@ -59,15 +66,15 @@
     border: none;
     box-shadow: 0 1px 2px var(--darkcontrastcolor);
     order: 1;
-    width: 45vh;
+    width: 500px;
 }
 
-@media(min-width: 768px) {
+@media(min-width: 1160px) {
     .main {
         flex-direction: row;
         background:
-            url(background.svg) no-repeat bottom right,
-            linear-gradient(90deg, var(--backgroundColor) 0 70%, var(--primaryColor) 70% 100%);
+            url(background.svg) no-repeat bottom right;
+        background-size: auto 100%;
     }
 
     .main header {
@@ -77,8 +84,10 @@
     }
 
     .takeSurvey {
-        transform: translate(60vw);
-        width: 30vw;
+        position: absolute;
+        right:40px;
+        top: 40%;
+        width: 500px;
         text-align: right;
     }
 

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './Home.module.css';
 import logo from '../logo.svg';
 import hero from './hero.svg';
+import homepoints from './homepoints.svg';
 
 const Home = () => {
     return (
@@ -10,9 +11,12 @@ const Home = () => {
             <section>
                 <header>
                     <img src={logo} alt="Omed Assist" />
+                    <span>
+                        <p  className={styles.tagLine}>Helping you navigate<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; your pain relief journey</p>
+                    </span>
                 </header>
                 <div>
-                    <img className={styles.hero} src={hero} alt="" />
+                    <img className={styles.hero} src={homepoints} alt="" />
                 </div>
             </section>
             <section className={styles.takeSurvey}>
