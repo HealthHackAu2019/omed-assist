@@ -42,10 +42,6 @@ class ResultSummaryChart extends Component {
             { title: "Opioid Use Risk", value: risk.score, maxValue: risk.maxScore, color: "#EAA745" },
         ];
 
-        features[0].value = 6;
-        features[1].value = 20;
-        features[2].value = 3;
-
         const primaryColor = "#9013FE";
         const dimensions = features.length;
         const lineLength = 45;
