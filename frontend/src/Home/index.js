@@ -9,15 +9,16 @@ const Home = () => {
         <div className={styles.main}>
             <section>
                 <header>
-                    <img src={logo} alt="OMed Assist" />
+                    <img src={logo} alt="Omed Assist" />
                 </header>
                 <div>
                     <img className={styles.hero} src={hero} alt="" />
                 </div>
             </section>
             <section className={styles.takeSurvey}>
-                <span>Opioid Self Assessment Tool</span>
-                <Link to="/questionnaire" className='btn btn-primary btn-lg'>Begin Now</Link>
+                <span className={styles.navigatePainText}>I want to navigate my pain relief journey</span>
+                <Link to="/questionnaire" className='btn btn-primary btn-lg'>Start Now</Link>
+                <span className={styles.painQuizText}>or take our <Link to="/quiz">Opioid Pain Quiz</Link></span>
             </section>
         </div>
     )
