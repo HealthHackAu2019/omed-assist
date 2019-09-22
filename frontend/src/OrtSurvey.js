@@ -113,7 +113,7 @@ export const ortJson =
                 {
                     type: "html",
                     name: "demographic_intro",
-                    html: "<p>Hello. Thanks for being here.</p><p>Let's start with some basics.</p>"
+                    html: "<h2>Welcome</h2><p class='milestone'>Let's get started with some basic details.</p>"
                 }
             ]
         },
@@ -160,7 +160,7 @@ export const ortJson =
                 {
                     type: "html",
                     name: "demographic_intro",
-                    html: "<p>What's happening in your life, surgery etc.</p>"
+                    html: "<h2>What's going on?</h2><p class='milestone'>Now let's find out a bit about what's going on in your life at the moment.</p>"
                 }
             ]
         },
@@ -260,8 +260,13 @@ export const ortJson =
                 {
                     type: "html",
                     name: "demographic_intro",
-                    html: "<p>Hello. Thanks for being here.</p><p>Let's start with some basics.</p>"
-                },
+                    html: "<h2>All about Opioids</h2><p>Now let's talk about opioids. The most commonly prescribed opioids are <ul><li>Codein</li><li>Morphine</li></ul></p>"
+                }
+            ]
+        },
+        {
+            "name": "page0",
+            "elements": [
                {
                 "name": "medication_summary",
                 "type": "radiogroup",
@@ -281,7 +286,7 @@ export const ortJson =
                 {
                     type: "html",
                     name: "demographic_intro",
-                    html: "<p>Lastly, let's explore your medical and family history.</p>" 
+                    html: "<h2>Almost done</h2><p>Just a few more questions about your medical and family history.</p>" 
                }
             ]
         },
