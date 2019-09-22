@@ -1,11 +1,9 @@
 .container {
-    height: 90vh;
     width: 100vw;
-    background-color: var(--primaryColor);
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: var(--primaryColor) url(topbar.svg) no-repeat top center;
+    background: var(--primaryColor) url(../topbar.svg) no-repeat top center;
 }
 
 .results {

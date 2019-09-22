@@ -69,7 +69,7 @@ export class Quiz extends Component {
 
     render() {
         return (
-            <div className="questionnaire">
+            <div className={styles.questionnaire}>
                 <Link to="/"><img src={logo} className={styles.logo} alt="Logo" /></Link>
                 <div className="surveyjs">
                     <Survey.Survey model={this.state.survey} />
