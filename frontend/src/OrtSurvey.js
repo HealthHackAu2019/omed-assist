@@ -116,7 +116,7 @@ export const ortJson =
                     "visibleIf": "{had_recent_event}='Yes'",
                     "type": "dropdown",
                     "name": "recent_event",
-                    "title": "What was is?",
+                    "title": "What was it?",
                     "colCount": 0,
                     "choices": [
                         "Injury at home",
@@ -166,7 +166,7 @@ export const ortJson =
                 {
                     type: "html",
                     name: "demographic_intro",
-                    html: "<p>Please provide a score from 0 to 10 for the following. Consider 0 to be no pain at all and 10 to be the worst pain imaginable.</p>"
+                    html: "<p class='inline-statement'>Please provide a score from 0 to 10 for the following. Consider 0 to be no pain at all and 10 to be the worst pain imaginable.</p>"
                 },
                 {
                     "name": "worst_pain_last_week",
@@ -327,7 +327,7 @@ export const ortJson =
                     "visibleIf": "{conditions.Depression}='Yes'",
                     type: "html",
                     name: "info",
-                    html: "<p>Please read each statement below and indicate how much the statement applied to you over the PAST WEEK. There are no right or wrong answers.</p>"
+                    html: "<p class='inline-statement'>Please read each statement below and indicate how much the statement applied to you over the PAST WEEK. There are no right or wrong answers.</p>"
                 },
                 depressionQuestionJson(1, "I couldn't seem to experience any positive feeling at all."),
                 depressionQuestionJson(2, "I found it difficult to work up the initiative to do things."),
