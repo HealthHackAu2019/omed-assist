@@ -1,7 +1,6 @@
 @import "Vars.css";
 
 .logo {
-   margin-left: 40px;
-   margin-top: 40px;
-   width: 100px; 
+   width: 100px;
+   margin: 20px;
 }
